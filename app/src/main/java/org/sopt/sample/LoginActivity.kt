@@ -58,6 +58,7 @@ class LoginActivity : AppCompatActivity(){
                 mbti = result.data?.getStringExtra("mbti")?:""
                 binding.idInput.setText(id)
                 binding.passwordInput.setText(password)
+                Snackbar.make(binding.root, "회원가입 완료!", Snackbar.LENGTH_SHORT).show()
             }
         }
     }

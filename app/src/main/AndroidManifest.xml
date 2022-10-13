@@ -20,18 +20,14 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
-<!--            <meta-data-->
-<!--                android:name="android.app.lib_name"-->
-<!--                android:value="" />-->
         </activity>
 
         <activity
             android:name="com.sopt.androidpractice.MainActivity"
-            android:exported="true"/>
+            android:exported="false" />
         <activity
             android:name="com.sopt.androidpractice.SignUpActivity"
-            android:exported="true"/>
+            android:exported="false" />
     </application>
 
 </manifest>

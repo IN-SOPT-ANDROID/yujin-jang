@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.snackbar.Snackbar
+import org.sopt.sample.R
 import org.sopt.sample.databinding.ActivitySignUpBinding
 
 class SignUpActivity : AppCompatActivity() {
@@ -18,23 +19,22 @@ class SignUpActivity : AppCompatActivity() {
         clickSignUp()
     }
 
-    private fun clickSignUp(){
-        with(binding){
-            signUpBtn.setOnClickListener {
-                if (idInput.length() == 0 || passwordInput.length() == 0 || mbtiInput.length() == 0) {
-                    Snackbar.make(root, "입력하지 않은 정보가 있습니다.", Snackbar.LENGTH_SHORT).show()
-                }
-                else if (idInput.text.length < 6 || idInput.text.length > 10) {
-                    Snackbar.make(root, "아이디는 6 ~ 10글자로 설정해야 합니다.", Snackbar.LENGTH_SHORT).show()
-                }
-                else if (passwordInput.text.length < 8 || passwordInput.text.length > 12) {
-                    Snackbar.make(root, "비밀번호는 8 ~ 12글자로 설정해야 합니다.", Snackbar.LENGTH_SHORT).show()
-                }
-                else {
+    private fun clickSignUp() {
+        with(binding) {
+            btnSignup.setOnClickListener {
+                if (etId.text.isNullOrBlank() || etPassword.text.isNullOrBlank() || etMbti.text.isNullOrBlank()) {
+                    Snackbar.make(root, R.string.no_input_error, Snackbar.LENGTH_SHORT).show()
+                } else if (etId.text.length < 6 || etId.text.length > 10) {
+                    Snackbar.make(root, R.string.signup_id_input_error, Snackbar.LENGTH_SHORT)
+                        .show()
+                } else if (etPassword.text.length < 8 || etPassword.text.length > 12) {
+                    Snackbar.make(root, R.string.signup_password_input_error, Snackbar.LENGTH_SHORT)
+                        .show()
+                } else {
                     val intent = Intent(this@SignUpActivity, LoginActivity::class.java)
-                    intent.putExtra("id", idInput.text.toString())
-                    intent.putExtra("password", passwordInput.text.toString())
-                    intent.putExtra("mbti", mbtiInput.text.toString())
+                    intent.putExtra(R.string.id.toString(), etId.text.toString())
+                    intent.putExtra(R.string.password.toString(), etPassword.text.toString())
+                    intent.putExtra(R.string.mbti.toString(), etMbti.text.toString())
                     setResult(RESULT_OK, intent)
                     finish()
                 }

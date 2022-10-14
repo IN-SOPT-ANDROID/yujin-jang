@@ -10,7 +10,7 @@ import org.sopt.sample.databinding.FragmentGalleryBinding
 class GalleryFragment : Fragment() {
     private var _binding: FragmentGalleryBinding? = null
     private val binding: FragmentGalleryBinding
-        get() = requireNotNull(_binding) { "갤러리 프래그먼트 _binding = null" }
+        get() = requireNotNull(_binding) { "galleryFragment _binding 오류" }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

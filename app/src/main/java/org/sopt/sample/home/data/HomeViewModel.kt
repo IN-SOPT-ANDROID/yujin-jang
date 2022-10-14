@@ -3,7 +3,7 @@ package org.sopt.sample.home.data
 import androidx.lifecycle.ViewModel
 import org.sopt.sample.R
 
-class HomeViewModel: ViewModel() {
+class HomeViewModel : ViewModel() {
     val mockRepoList = listOf<Repo>(
         Repo(
             image = R.drawable.github,

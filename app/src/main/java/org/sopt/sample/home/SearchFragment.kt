@@ -10,7 +10,7 @@ import org.sopt.sample.databinding.FragmentSearchBinding
 class SearchFragment : Fragment() {
     private var _binding: FragmentSearchBinding? = null
     private val binding: FragmentSearchBinding
-        get() = requireNotNull(_binding) { "바인딩 객체 생성하고 써라 진짜 콱싀" }
+        get() = requireNotNull(_binding) { "searchFragment _binding 오류" }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

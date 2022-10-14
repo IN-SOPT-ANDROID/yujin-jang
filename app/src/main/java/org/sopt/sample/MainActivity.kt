@@ -18,7 +18,6 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // 실습 코드
         val currentFragment = supportFragmentManager.findFragmentById(R.id.home_container)
         if (currentFragment == null) {
             supportFragmentManager.beginTransaction()
@@ -27,7 +26,6 @@ class MainActivity : AppCompatActivity() {
         }
 
         onNavSelect()
-//        setProfile()
     }
 
     private fun onNavSelect() {
@@ -46,9 +44,4 @@ class MainActivity : AppCompatActivity() {
         transaction.replace(R.id.home_container, fragment)
         transaction.commit()
     }
-
-    //    private fun setProfile() {
-//        binding.profileNameTv.text = "이름: " + intent.getStringExtra("id")
-//        binding.profileMbtiTv.text = "MBTI: " + intent.getStringExtra("mbti")
-//    }
 }

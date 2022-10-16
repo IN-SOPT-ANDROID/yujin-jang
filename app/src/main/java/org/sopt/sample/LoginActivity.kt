@@ -9,9 +9,10 @@ import android.widget.Toast
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import com.google.android.material.snackbar.Snackbar
+import org.sopt.sample.R
 import org.sopt.sample.databinding.ActivityLoginBinding
 
-class LoginActivity : AppCompatActivity(){
+class LoginActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityLoginBinding
     private lateinit var resultLauncher: ActivityResultLauncher<Intent>
@@ -31,19 +32,18 @@ class LoginActivity : AppCompatActivity(){
     }
 
     private fun clickLogin() {
-        with(binding){
-            loginBtn.setOnClickListener {
-                if (idInput.text.length < 6 || idInput.text.length > 10) {
-                    Snackbar.make(root, "아이디가 잘못되었습니다!", Snackbar.LENGTH_SHORT).show()
-                }
-                else if (passwordInput.text.length < 8 || passwordInput.text.length > 12) {
-                    Snackbar.make(root, "비밀번호가 잘못되었습니다!", Snackbar.LENGTH_SHORT).show()
-                }
-                else {
+        with(binding) {
+            btnLogin.setOnClickListener {
+                if (idInput.text.length !in 6..10) {
+                    Snackbar.make(root, R.string.id_input_error, Snackbar.LENGTH_SHORT).show()
+                } else if (etPassword.text.length !in 8..12) {
+                    Snackbar.make(root, R.string.password_input_error, Snackbar.LENGTH_SHORT).show()
+                } else {
                     val intent = Intent(this@LoginActivity, MainActivity::class.java)
-                    Toast.makeText(this@LoginActivity, "로그인에 성공했습니다.", Toast.LENGTH_SHORT).show()
-                    intent.putExtra("id", id)
-                    intent.putExtra("mbti", mbti)
+                    Toast.makeText(this@LoginActivity, R.string.login_success, Toast.LENGTH_SHORT)
+                        .show()
+                    intent.putExtra(R.string.id.toString(), id)
+                    intent.putExtra(R.string.mbti.toString(), mbti)
                     startActivity(intent)
                 }
             }
@@ -51,19 +51,22 @@ class LoginActivity : AppCompatActivity(){
     }
 
     private fun setResultSignUp() {
-        resultLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
-            if (result.resultCode == Activity.RESULT_OK){
-                id = result.data?.getStringExtra("id")?: ""
-                password = result.data?.getStringExtra("password")?:""
-                mbti = result.data?.getStringExtra("mbti")?:""
-                binding.idInput.setText(id)
-                binding.passwordInput.setText(password)
+        resultLauncher =
+            registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
+                if (result.resultCode == Activity.RESULT_OK) {
+                    id = result.data?.getStringExtra(R.string.id.toString()) ?: ""
+                    password = result.data?.getStringExtra(R.string.password.toString()) ?: ""
+                    mbti = result.data?.getStringExtra(R.string.mbti.toString()) ?: ""
+                    binding.idInput.setText(id)
+                    binding.etPassword.setText(password)
+                    Snackbar.make(binding.root, R.string.signup_success, Snackbar.LENGTH_SHORT)
+                        .show()
+                }
             }
-        }
     }
 
     private fun clickSignUp() {
-        binding.signupBtn.setOnClickListener {
+        binding.btnSignup.setOnClickListener {
             val intent = Intent(this, SignUpActivity::class.java)
             resultLauncher.launch(intent)
         }

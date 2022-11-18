@@ -1,7 +1,7 @@
 package com.sopt.androidpractice
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.sopt.seminar2_test.home.GalleryFragment
 import com.sopt.seminar2_test.home.SearchFragment

@@ -64,7 +64,7 @@ class LoginActivity : AppCompatActivity() {
                         this@LoginActivity, R.string.login_success, Toast.LENGTH_SHORT
                     ).show()
                     intent.putExtra(R.string.id.toString(), id)
-                    intent.putExtra(R.string.mbti.toString(), mbti)
+                    intent.putExtra(R.string.name.toString(), mbti)
                     startActivity(intent)
                 } else {
                     Log.d(
@@ -107,7 +107,7 @@ class LoginActivity : AppCompatActivity() {
                 if (result.resultCode == Activity.RESULT_OK) {
                     id = result.data?.getStringExtra(R.string.id.toString()) ?: ""
                     password = result.data?.getStringExtra(R.string.password.toString()) ?: ""
-                    mbti = result.data?.getStringExtra(R.string.mbti.toString()) ?: ""
+                    mbti = result.data?.getStringExtra(R.string.name.toString()) ?: ""
                     Snackbar.make(binding.root, R.string.signup_success, Snackbar.LENGTH_SHORT)
                         .show()
                 }

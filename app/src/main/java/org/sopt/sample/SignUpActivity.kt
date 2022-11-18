@@ -40,7 +40,7 @@ class SignUpActivity : AppCompatActivity() {
             RequestSignUpDTO(
                 binding.etId.text.toString(),
                 binding.etPassword.text.toString(),
-                binding.etMbti.text.toString()
+                binding.etName.text.toString()
             )
         ).enqueue(object : Callback<ResponseSignUpDTO> {
             override fun onResponse(
@@ -53,7 +53,7 @@ class SignUpActivity : AppCompatActivity() {
                     intent.putExtra(
                         R.string.password.toString(), binding.etPassword.text.toString()
                     )
-                    intent.putExtra(R.string.mbti.toString(), binding.etMbti.text.toString())
+                    intent.putExtra(R.string.name.toString(), binding.etName.text.toString())
                     setResult(RESULT_OK, intent)
                     finish()
                 } else {
@@ -74,7 +74,7 @@ class SignUpActivity : AppCompatActivity() {
 
     private fun isSignUpPattern(): Boolean {
         with(binding) {
-            if (etId.text.isNullOrBlank() || etPassword.text.isNullOrBlank() || etMbti.text.isNullOrBlank()) {
+            if (etId.text.isNullOrBlank() || etPassword.text.isNullOrBlank() || etName.text.isNullOrBlank()) {
                 Snackbar.make(root, R.string.no_input_error, Snackbar.LENGTH_SHORT).show()
                 return false
             } else if (etId.text.length !in 6..20) {

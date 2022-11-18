@@ -7,7 +7,7 @@
     tools:context=".home.HomeFragment">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_repo"
+        android:id="@+id/rv_user_info"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="12dp"

@@ -60,7 +60,7 @@ class RepoAdapter(context: Context) : RecyclerView.Adapter<RecyclerView.ViewHold
         private val binding: ItemHomeHeaderBinding
     ) : RecyclerView.ViewHolder(binding.root)
 
-    inner class BodyViewHolder(
+    class BodyViewHolder(
         private val binding: ItemHomeBodyBinding
     ) : RecyclerView.ViewHolder(binding.root) {
         fun onBind(data: Repo) {

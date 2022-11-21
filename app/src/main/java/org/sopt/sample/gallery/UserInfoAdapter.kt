@@ -26,7 +26,7 @@ class UserInfoAdapter(context: Context, userList: List<ResponseUserInfoDTO.UserI
 
     override fun getItemCount() = userList.size
 
-    inner class ViewHolder(
+    class ViewHolder(
         private val binding: ItemGalleryBinding
     ) : RecyclerView.ViewHolder(binding.root) {
         fun onBind(data: ResponseUserInfoDTO.UserInfo) {

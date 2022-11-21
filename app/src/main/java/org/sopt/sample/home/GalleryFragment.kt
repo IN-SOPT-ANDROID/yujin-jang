@@ -41,7 +41,7 @@ class GalleryFragment : Fragment() {
     }
 
     fun getUserInfo() {
-        userInfoService.getUserInfo().enqueue(object : Callback<ResponseUserInfoDTO> {
+        userInfoService.getUserInfo(2).enqueue(object : Callback<ResponseUserInfoDTO> {
             override fun onResponse(
                 call: Call<ResponseUserInfoDTO>,
                 response: Response<ResponseUserInfoDTO>

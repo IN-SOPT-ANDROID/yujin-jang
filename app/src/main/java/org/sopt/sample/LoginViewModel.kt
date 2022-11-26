@@ -17,6 +17,12 @@ class LoginViewModel : ViewModel() {
     private val _successLogin = MutableLiveData<Boolean>()
     val successLogin: LiveData<Boolean> = _successLogin
 
+    private val _checkId = MutableLiveData<Boolean>()
+    val checkId: LiveData<Boolean> = _checkId
+
+    private val _checkPassword = MutableLiveData<Boolean>()
+    val checkPassword: LiveData<Boolean> = _checkPassword
+
     fun login(email: String, password: String) {
         authService.login(
             RequestLoginDTO(email, password)
@@ -36,5 +42,13 @@ class LoginViewModel : ViewModel() {
             override fun onFailure(call: Call<ResponseLoginDTO>, t: Throwable) {
             }
         })
+    }
+
+    fun checkPattern(text: String, type: Int): Boolean { // type 0 = id, 1 = password
+        when (type) {
+            0 -> _checkId.value = text.length in 6..10 || text.isNullOrBlank()
+            1 -> _checkPassword.value = text.length in 6..12 || text.isNullOrBlank()
+        }
+        return false
     }
 }

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">INSOPTAndroidPractice</string>
+    <string name="app_name">INSOPT</string>
 
     <!--  login & signup  -->
     <string name="id">id</string>

@@ -91,6 +91,7 @@ class LoginActivity : AppCompatActivity() {
 
     private fun setResultSignUp() {
         resultLauncher =
+            // getContent or PickVisualMedia 넣기 ?
             registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
                 if (result.resultCode == Activity.RESULT_OK) {
                     id = result.data?.getStringExtra(R.string.id.toString()) ?: ""

@@ -7,11 +7,12 @@
     android:paddingEnd="24dp">
 
     <TextView
-        android:id="@+id/txt_signup_title"
+        android:id="@+id/tv_signup_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="74dp"
         android:text="@string/signup"
+        android:textColor="@color/gray_08"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -19,14 +20,15 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/txt_id_title"
+        android:id="@+id/tv_id_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="42dp"
+        android:layout_marginTop="74dp"
         android:text="@string/id"
+        android:textColor="@color/gray_08"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/txt_signup_title" />
+        app:layout_constraintTop_toBottomOf="@id/tv_signup_title" />
 
     <EditText
         android:id="@+id/et_id"
@@ -35,14 +37,26 @@
         android:layout_marginTop="8dp"
         android:hint="@string/et_id"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/txt_id_title" />
+        app:layout_constraintTop_toBottomOf="@id/tv_id_title" />
+
+    <TextView
+        android:id="@+id/tv_id_error_msg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/signup_id_input_error"
+        android:textColor="@color/red"
+        android:textSize="12sp"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/et_id" />
 
     <TextView
         android:id="@+id/txt_password"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="38dp"
+        android:layout_marginTop="46dp"
         android:text="@string/password"
+        android:textColor="@color/gray_08"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/et_id" />
@@ -58,11 +72,23 @@
         app:layout_constraintTop_toBottomOf="@id/txt_password" />
 
     <TextView
-        android:id="@+id/txt_name_title"
+        android:id="@+id/tv_password_error_msg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="38dp"
+        android:text="@string/signup_password_input_error"
+        android:textColor="@color/red"
+        android:textSize="12sp"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/et_password" />
+
+    <TextView
+        android:id="@+id/tv_name_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="46dp"
         android:text="@string/name"
+        android:textColor="@color/gray_08"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/et_password" />
@@ -74,15 +100,18 @@
         android:layout_marginTop="8dp"
         android:hint="@string/et_name"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/txt_name_title" />
+        app:layout_constraintTop_toBottomOf="@id/tv_name_title" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_signup"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
-        android:text="@string/signup"
+        android:layout_marginTop="80dp"
+        android:background="@drawable/sel_dark_button"
         android:enabled="false"
+        android:paddingVertical="16dp"
+        android:text="@string/signup"
+        android:textColor="@drawable/sel_dark_text"
         app:layout_constraintTop_toBottomOf="@id/et_name" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

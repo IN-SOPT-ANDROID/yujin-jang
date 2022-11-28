@@ -11,7 +11,7 @@
         android:id="@+id/txt_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="100dp"
         android:text="@string/app_name"
         android:textColor="@color/gray_08"
         android:textSize="24sp"
@@ -24,7 +24,7 @@
         android:id="@+id/txt_id_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="80dp"
         android:text="ID"
         android:textColor="@color/gray_08"
         android:textStyle="bold"
@@ -83,26 +83,26 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/et_password" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_login"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
-        android:backgroundTint="@color/gray_08"
-        android:enabled="false"
-        android:paddingVertical="10dp"
-        android:text="LOGIN"
+        android:layout_marginTop="100dp"
+        android:background="@drawable/sel_gray_button"
+        android:paddingVertical="16dp"
+        android:text="@string/login"
+        android:textColor="@color/gray_08"
         app:layout_constraintTop_toBottomOf="@id/et_password" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_signup"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:backgroundTint="@color/gray_03"
-        android:paddingVertical="10dp"
-        android:text="SIGNUP"
-        android:textColor="@color/gray_08"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/sel_dark_button"
+        android:paddingVertical="16dp"
+        android:text="@string/signup"
+        android:textColor="@drawable/sel_dark_text"
         app:layout_constraintTop_toBottomOf="@id/btn_login" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

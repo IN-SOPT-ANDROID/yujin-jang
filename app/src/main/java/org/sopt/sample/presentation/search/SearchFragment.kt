@@ -1,4 +1,4 @@
-package com.sopt.seminar2_test.home
+package org.sopt.sample.presentation.search
 
 import android.os.Bundle
 import android.view.LayoutInflater

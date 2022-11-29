@@ -1,5 +1,9 @@
-package org.sopt.sample.data
+package org.sopt.sample.data.service
 
+import org.sopt.sample.data.entity.request.RequestLoginDTO
+import org.sopt.sample.data.entity.request.RequestSignUpDTO
+import org.sopt.sample.data.entity.response.ResponseLoginDTO
+import org.sopt.sample.data.entity.response.ResponseSignUpDTO
 import retrofit2.Call
 import retrofit2.http.Body
 import retrofit2.http.POST

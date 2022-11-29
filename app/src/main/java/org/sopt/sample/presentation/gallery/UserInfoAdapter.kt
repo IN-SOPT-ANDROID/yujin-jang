@@ -1,11 +1,11 @@
-package org.sopt.sample.gallery
+package org.sopt.sample.presentation.gallery
 
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import org.sopt.sample.data.ResponseUserInfoDTO
+import org.sopt.sample.data.entity.response.ResponseUserInfoDTO
 import org.sopt.sample.databinding.ItemGalleryBinding
 
 class UserInfoAdapter(context: Context, userList: List<ResponseUserInfoDTO.UserInfo>) :

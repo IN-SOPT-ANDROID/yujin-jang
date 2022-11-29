@@ -1,4 +1,4 @@
-package org.sopt.sample.home.data
+package org.sopt.sample.presentation.home
 
 import androidx.lifecycle.ViewModel
 import org.sopt.sample.R

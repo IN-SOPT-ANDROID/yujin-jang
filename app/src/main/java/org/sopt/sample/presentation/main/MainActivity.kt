@@ -1,13 +1,13 @@
-package com.sopt.androidpractice
+package org.sopt.sample.presentation.main
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import com.sopt.seminar2_test.home.GalleryFragment
-import com.sopt.seminar2_test.home.SearchFragment
 import org.sopt.sample.R
 import org.sopt.sample.databinding.ActivityMainBinding
-import org.sopt.sample.home.HomeFragment
+import org.sopt.sample.presentation.gallery.GalleryFragment
+import org.sopt.sample.presentation.home.HomeFragment
+import org.sopt.sample.presentation.search.SearchFragment
 
 class MainActivity : AppCompatActivity() {
 

@@ -1,12 +1,14 @@
-package org.sopt.sample.data
+package org.sopt.sample.util
 
 import com.jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFactory
 import kotlinx.serialization.json.Json
 import okhttp3.MediaType.Companion.toMediaType
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
-import org.sopt.sample.data.ApiFactory.retrofit
-import org.sopt.sample.data.ApiFactory.retrofit_reqres
+import org.sopt.sample.util.ApiFactory.retrofit
+import org.sopt.sample.util.ApiFactory.retrofit_reqres
+import org.sopt.sample.data.service.AuthService
+import org.sopt.sample.data.service.UserInfoService
 import retrofit2.Retrofit
 
 object ApiFactory {

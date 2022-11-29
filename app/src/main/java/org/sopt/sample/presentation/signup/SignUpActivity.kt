@@ -1,4 +1,4 @@
-package com.sopt.androidpractice
+package org.sopt.sample.presentation.signup
 
 import android.content.Intent
 import android.os.Bundle
@@ -8,10 +8,11 @@ import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.snackbar.Snackbar
 import org.sopt.sample.R
-import org.sopt.sample.data.RequestSignUpDTO
-import org.sopt.sample.data.ResponseSignUpDTO
-import org.sopt.sample.data.ServicePool
+import org.sopt.sample.util.ServicePool
+import org.sopt.sample.data.entity.request.RequestSignUpDTO
+import org.sopt.sample.data.entity.response.ResponseSignUpDTO
 import org.sopt.sample.databinding.ActivitySignUpBinding
+import org.sopt.sample.presentation.login.LoginActivity
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

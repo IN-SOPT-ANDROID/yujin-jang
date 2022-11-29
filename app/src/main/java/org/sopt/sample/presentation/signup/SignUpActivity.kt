@@ -39,7 +39,7 @@ class SignUpActivity : AppCompatActivity() {
                 val intent = Intent(this@SignUpActivity, LoginActivity::class.java)
                 intent.putExtra(R.string.id.toString(), binding.etId.text.toString())
                 intent.putExtra(R.string.password.toString(), binding.etPassword.text.toString())
-                setResult(AppCompatActivity.RESULT_OK, intent)
+                setResult(RESULT_OK, intent)
                 finish()
             } else {
                 Snackbar.make(binding.root, R.string.signup_failure, Snackbar.LENGTH_SHORT).show()

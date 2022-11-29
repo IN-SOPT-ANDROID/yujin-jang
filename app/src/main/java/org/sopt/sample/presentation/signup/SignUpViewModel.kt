@@ -12,9 +12,6 @@ import retrofit2.Callback
 import retrofit2.Response
 
 class SignUpViewModel : ViewModel() {
-    private val _signUpResult: MutableLiveData<ResponseSignUpDTO> = MutableLiveData()
-    var signUpResult: LiveData<ResponseSignUpDTO> = _signUpResult
-
     private val _successSignUp = MutableLiveData<Boolean>()
     val successSignUp: LiveData<Boolean> = _successSignUp
 
@@ -28,7 +25,6 @@ class SignUpViewModel : ViewModel() {
             ) {
                 if (response.code() == 201 && response.isSuccessful) {
                     _successSignUp.value = true
-                    _signUpResult.value = response.body()
                 } else {
                     _successSignUp.value = false
                     Log.d("SignUP 실패", response.message())

@@ -11,9 +11,6 @@ import retrofit2.Callback
 import retrofit2.Response
 
 class LoginViewModel : ViewModel() {
-    private val _loginResult: MutableLiveData<ResponseLoginDTO> = MutableLiveData()
-    val loginResult: LiveData<ResponseLoginDTO> = _loginResult
-
     private val _successLogin = MutableLiveData<Boolean>()
     val successLogin: LiveData<Boolean> = _successLogin
 
@@ -25,12 +22,7 @@ class LoginViewModel : ViewModel() {
                 call: Call<ResponseLoginDTO>,
                 response: Response<ResponseLoginDTO>
             ) {
-                if (response.code() == 200) {
-                    _successLogin.value = true
-                    _loginResult.value = response.body()
-                } else {
-                    _successLogin.value = false
-                }
+                _successLogin.value = response.code() == 200 && response.isSuccessful
             }
 
             override fun onFailure(call: Call<ResponseLoginDTO>, t: Throwable) {

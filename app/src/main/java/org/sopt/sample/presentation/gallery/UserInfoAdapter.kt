@@ -1,11 +1,12 @@
-package org.sopt.sample.gallery
+package org.sopt.sample.presentation.gallery
 
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import coil.load
 import com.bumptech.glide.Glide
-import org.sopt.sample.data.ResponseUserInfoDTO
+import org.sopt.sample.data.entity.response.ResponseUserInfoDTO
 import org.sopt.sample.databinding.ItemGalleryBinding
 
 class UserInfoAdapter(context: Context, userList: List<ResponseUserInfoDTO.UserInfo>) :
@@ -26,13 +27,14 @@ class UserInfoAdapter(context: Context, userList: List<ResponseUserInfoDTO.UserI
 
     override fun getItemCount() = userList.size
 
-    inner class ViewHolder(
+    class ViewHolder(
         private val binding: ItemGalleryBinding
     ) : RecyclerView.ViewHolder(binding.root) {
         fun onBind(data: ResponseUserInfoDTO.UserInfo) {
             binding.txtUserName.text = data.first_name
             binding.txtUserEmail.text = data.email
-            Glide.with(binding.root).load(data.avatar).into(binding.imgUser)
+//            Glide.with(binding.root).load(data.avatar).into(binding.imgUser)
+            binding.imgUser.load(data.avatar)
         }
     }
 }

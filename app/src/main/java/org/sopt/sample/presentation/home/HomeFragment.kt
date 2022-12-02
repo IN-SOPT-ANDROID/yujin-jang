@@ -1,4 +1,4 @@
-package org.sopt.sample.home
+package org.sopt.sample.presentation.home
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,8 +7,6 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import org.sopt.sample.databinding.FragmentHomeBinding
-import org.sopt.sample.home.adapter.RepoAdapter
-import org.sopt.sample.home.data.HomeViewModel
 
 class HomeFragment : Fragment() {
     private var _binding: FragmentHomeBinding? = null

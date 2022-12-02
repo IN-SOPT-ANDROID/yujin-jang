@@ -1,4 +1,4 @@
-package org.sopt.sample.home.adapter
+package org.sopt.sample.presentation.home
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -6,7 +6,6 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import org.sopt.sample.databinding.ItemHomeBodyBinding
 import org.sopt.sample.databinding.ItemHomeHeaderBinding
-import org.sopt.sample.home.data.Repo
 
 class RepoAdapter(context: Context) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     private val inflater by lazy { LayoutInflater.from(context) } // Adapter 객체 생성 시에만 할당되도록
@@ -60,7 +59,7 @@ class RepoAdapter(context: Context) : RecyclerView.Adapter<RecyclerView.ViewHold
         private val binding: ItemHomeHeaderBinding
     ) : RecyclerView.ViewHolder(binding.root)
 
-    inner class BodyViewHolder(
+    class BodyViewHolder(
         private val binding: ItemHomeBodyBinding
     ) : RecyclerView.ViewHolder(binding.root) {
         fun onBind(data: Repo) {

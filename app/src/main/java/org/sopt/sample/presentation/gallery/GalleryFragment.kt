@@ -1,4 +1,4 @@
-package com.sopt.seminar2_test.home
+package org.sopt.sample.presentation.gallery
 
 import android.os.Bundle
 import android.util.Log
@@ -6,10 +6,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import org.sopt.sample.data.ResponseUserInfoDTO
-import org.sopt.sample.data.ServicePool
+import org.sopt.sample.util.ServicePool
+import org.sopt.sample.data.entity.response.ResponseUserInfoDTO
 import org.sopt.sample.databinding.FragmentGalleryBinding
-import org.sopt.sample.gallery.UserInfoAdapter
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -41,7 +40,7 @@ class GalleryFragment : Fragment() {
     }
 
     fun getUserInfo() {
-        userInfoService.getUserInfo().enqueue(object : Callback<ResponseUserInfoDTO> {
+        userInfoService.getUserInfo(2).enqueue(object : Callback<ResponseUserInfoDTO> {
             override fun onResponse(
                 call: Call<ResponseUserInfoDTO>,
                 response: Response<ResponseUserInfoDTO>

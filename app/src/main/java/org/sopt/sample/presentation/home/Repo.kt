@@ -1,4 +1,4 @@
-package org.sopt.sample.home.data
+package org.sopt.sample.presentation.home
 
 data class Repo(
     val image: Int,

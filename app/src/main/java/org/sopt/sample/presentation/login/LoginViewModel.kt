@@ -1,5 +1,6 @@
 package org.sopt.sample.presentation.login
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -26,6 +27,7 @@ class LoginViewModel : ViewModel() {
             }
 
             override fun onFailure(call: Call<ResponseLoginDTO>, t: Throwable) {
+                Log.d("LOGIN/FAILURE", t.message.toString())
             }
         })
     }

@@ -4,6 +4,7 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import coil.load
 import com.bumptech.glide.Glide
 import org.sopt.sample.data.entity.response.ResponseUserInfoDTO
 import org.sopt.sample.databinding.ItemGalleryBinding
@@ -32,7 +33,8 @@ class UserInfoAdapter(context: Context, userList: List<ResponseUserInfoDTO.UserI
         fun onBind(data: ResponseUserInfoDTO.UserInfo) {
             binding.txtUserName.text = data.first_name
             binding.txtUserEmail.text = data.email
-            Glide.with(binding.root).load(data.avatar).into(binding.imgUser)
+//            Glide.with(binding.root).load(data.avatar).into(binding.imgUser)
+            binding.imgUser.load(data.avatar)
         }
     }
 }

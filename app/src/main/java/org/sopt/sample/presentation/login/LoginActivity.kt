@@ -36,12 +36,16 @@ class LoginActivity : AppCompatActivity() {
     private fun clickLogin() {
         binding.btnLogin.setOnClickListener {
             viewModel.login(binding.etId.text.toString(), binding.etPassword.text.toString())
-            viewModel.successLogin.observe(this) { success ->
-                if (success) {
-                    Toast.makeText(this@LoginActivity, R.string.login_success, Toast.LENGTH_SHORT)
-                        .show()
-                    startActivity(Intent(this, MainActivity::class.java))
-                }
+            onSuccessLogin()
+        }
+    }
+
+    private fun onSuccessLogin() {
+        viewModel.successLogin.observe(this) { success ->
+            if (success) {
+                Toast.makeText(this@LoginActivity, R.string.login_success, Toast.LENGTH_SHORT)
+                    .show()
+                startActivity(Intent(this, MainActivity::class.java))
             }
         }
     }
